@@ -74,11 +74,11 @@ const Home = () => {
         {sounds.map((sound) => (
           <button
             key={sound.name}
-            className={`px-4 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center gap-2 text-lg font-medium shadow-sm bg-white hover:bg-blue-50 aria-selected:bg-blue-200 aria-selected:border-blue-400 ${
-              selected.name === sound.name ? "aria-selected" : ""
+            className={`px-4 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center gap-2 text-lg font-medium shadow-sm bg-white hover:bg-blue-50 ${
+              selected.name === sound.name ? "bg-blue-200 border-blue-400" : ""
             }`}
             aria-label={`${sound.name} 선택`}
-            aria-selected={selected.name === sound.name}
+            aria-pressed={selected.name === sound.name}
             tabIndex={0}
             onClick={() => handleSelect(sound)}
             onKeyDown={(e) => {
